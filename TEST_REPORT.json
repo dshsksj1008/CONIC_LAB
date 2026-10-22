@@ -1,0 +1,201 @@
+[
+  {
+    "test": "All local HTML navigation and assets exist",
+    "pass_": true,
+    "detail": []
+  },
+  {
+    "test": "JS syntax lab-app.js",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "JS syntax conic-core.js",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "JS syntax explore-app.js",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "JS syntax ui.js",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "JS syntax conic-geometry.js",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "JS syntax ar-app.js",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "Aframe and AR.js load before scene",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "AR has 4 distinct marker IDs",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "AR per-marker event handlers",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "Navigation test included",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "Hosted HTTP resource index.html",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/html"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource lab.html",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/html"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource ar.html",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/html"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource markers.html",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/html"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource navigation-test.html",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/html"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource diagnostics.html",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/html"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource markers/master.patt",
+    "pass_": true,
+    "detail": [
+      200,
+      "application/octet-stream"
+    ]
+  },
+  {
+    "test": "Hosted HTTP resource conic-geometry.js",
+    "pass_": true,
+    "detail": [
+      200,
+      "text/javascript"
+    ]
+  },
+  {
+    "test": "CSS styles applied on home",
+    "pass_": true,
+    "detail": 72.5
+  },
+  {
+    "test": "Offline math calculator initializes",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "Interactive master selection changes equation",
+    "pass_": true,
+    "detail": ""
+  },
+  {
+    "test": "Browser JS errors none",
+    "pass_": true,
+    "detail": []
+  },
+  {
+    "test": "Master section classifications",
+    "pass_": true,
+    "detail": [
+      {
+        "t": 0,
+        "kind": "circle",
+        "pts": 1441,
+        "error": 1.0408340855860843e-17
+      },
+      {
+        "t": 30,
+        "kind": "ellipse",
+        "pts": 1441,
+        "error": 5.551115123125783e-17
+      },
+      {
+        "t": 56.97613244420336,
+        "kind": "parabola",
+        "pts": 1131,
+        "error": 2.220446049250313e-16
+      },
+      {
+        "t": 70,
+        "kind": "hyperbola",
+        "pts": 1302,
+        "error": 2.220446049250313e-16
+      }
+    ]
+  },
+  {
+    "test": "Conic plane intersection residual",
+    "pass_": true,
+    "detail": [
+      {
+        "t": 0,
+        "kind": "circle",
+        "pts": 1441,
+        "error": 1.0408340855860843e-17
+      },
+      {
+        "t": 30,
+        "kind": "ellipse",
+        "pts": 1441,
+        "error": 5.551115123125783e-17
+      },
+      {
+        "t": 56.97613244420336,
+        "kind": "parabola",
+        "pts": 1131,
+        "error": 2.220446049250313e-16
+      },
+      {
+        "t": 70,
+        "kind": "hyperbola",
+        "pts": 1302,
+        "error": 2.220446049250313e-16
+      }
+    ]
+  }
+]

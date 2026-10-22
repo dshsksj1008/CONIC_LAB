@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071019">
+<meta name="description" content="CONIC LAB: 노트북과 iPad에서 이차곡선의 생성 원리를 조작하고 관찰하는 인터랙티브 기하 교구">
+<title>CONIC LAB | 이차곡선 3D 시연실</title>
+<link rel="stylesheet" href="desktop.css">
+</head>
+<body>
+<div class="app" id="appRoot">
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="홈"><div class="brand-symbol">◈</div><div><div class="brand-name">CONIC <span>LAB</span> <small style="display:inline;font-size:10px;letter-spacing:0;color:#7cabb5">V6</small></div><small>INTERACTIVE GEOMETRY STUDIO</small></div></a>
+  <nav class="topnav" aria-label="페이지 탐색">
+    <a class="navlink active" href="index.html">노트북 시연</a>
+    <a class="navlink" href="markers.html">AR 마커 인쇄</a>
+    <a class="navlink ar" href="ar.html" title="HTTPS 배포 후 카메라 사용">AR 카메라 ↗</a>
+    <a class="navlink ar" href="ar-verify.html" title="실제 마커 검증 화면">AR 실제검증 ↗</a>
+    <a class="navlink" href="math-board.html">실물 검증판</a>
+    <a class="navlink" href="qr.html">접속 QR</a>
+  </nav>
+</header>
+<section class="intro">
+  <div><span class="eyebrow">GEOMETRY EXPLORER / DESKTOP PRESENTATION</span><h1>이차곡선의 생성 원리를<br>직접 조작하고 탐구하다.</h1><p>카메라 없이 실행되는 3D 시연 모드 · 변수에 따른 형상 변화 · 초점·꼭짓점·접선·좌표 격자</p></div>
+  <div class="status"><i></i> LAPTOP DEMO READY · 카메라 불필요</div>
+</section>
+<main class="layout" id="layout">
+  <div class="left">
+    <section class="surface" aria-label="3D 도형 뷰어">
+      <div class="surface-header"><div><h2>3D GEOMETRY VIEWER</h2><small>마우스 드래그·터치 회전, 휠·핀치 확대/축소</small></div><div class="surface-actions"><button class="tiny-button" id="animBtn">▶ 각도 변화</button><button class="tiny-button" id="resetBtn">↺ 시점 초기화</button><button class="tiny-button" id="captureBtn">↓ 이미지</button><button class="tiny-button" id="wideBtn">⛶ 발표 모드</button></div></div>
+      <div class="modebar" role="tablist" aria-label="이차곡선 종류"><button class="mode" role="tab" data-kind="ellipse">01 · 타원</button><button class="mode" role="tab" data-kind="parabola">02 · 포물선</button><button class="mode" role="tab" data-kind="hyperbola">03 · 쌍곡선</button><button class="mode selected" role="tab" data-kind="master" aria-selected="true">04 · 종합 원뿔 절단</button></div>
+      <div class="viewer-container" id="viewContainer"><canvas id="threeView" aria-label="수학적 원리를 나타내는 3D 모델"></canvas><div class="corner-tag" id="viewerTitle">04 · 이중 원뿔과 절단 평면</div><div class="legend"><span><i class="swatch"></i> 이차곡선</span><span><i class="swatch gold"></i> 절단 평면 / 접선</span><span><i class="swatch pink"></i> 꼭짓점</span></div><div class="corner-guide">드래그: 회전 &nbsp;·&nbsp; 휠/핀치: 확대 &nbsp;·&nbsp; <span class="kbd">1</span>–<span class="kbd">4</span>: 모드 변경</div></div>
+    </section>
+    <section class="surface" aria-label="2D 좌표 그래프"><div class="surface-header"><h3 id="graphTitle">2D SECTION · 절단 평면의 교선</h3><small>3D 원리 ↔ 평면 좌표</small></div><div class="graph-wrap"><canvas id="graphView" aria-label="이차곡선 좌표 그래프"></canvas><p id="graphNote" class="graph-caption">절단 평면에 놓인 곡선을 같은 수학 조건으로 계산합니다.</p></div></section>
+  </div>
+  <aside class="surface controls" aria-label="변수 조작 패널">
+    <div class="panel-header"><span class="eyebrow">LIVE MATHEMATICAL CONTROLS</span><h2 id="controlTitle">종합 원뿔 절단</h2><p id="controlDesc">절단 평면의 각도를 움직이면 교선의 종류와 형태가 연속적으로 변해.</p></div>
+    <div class="ctrl-group"><div class="ctrl-group-title">매개변수 조절 <span class="tiptxt">드래그해서 변경</span></div><div id="sliderPanel"></div><div id="presets"></div></div>
+    <div class="ctrl-group"><div class="ctrl-group-title">3D 학습 표시 설정</div><div id="flagsPanel" class="checkboxes"></div></div>
+    <div class="math-card"><div class="math-label">LIVE EQUATION / DEFINITION</div><div class="equation" id="eqText">불러오는 중…</div><div class="details" id="detailText"></div></div>
+    <div class="notice" id="notice">종합 모형의 각도 γ는 원뿔의 모선이 수평면과 이루는 각도야. θ = γ일 때 포물선이 나타나.</div>
+  </aside>
+</main>
+<footer class="footer">CONIC LAB · 고등학교 기하 수학 교구 · 이 화면은 HTML/CSS/JavaScript로 로컬에서 실행 가능 · 마커 AR은 GitHub Pages HTTPS 배포 후 스마트폰 또는 iPad에서 사용 가능. 실제 실물 교구 인정 여부는 교사 확인 필요.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="conic-core.js"></script>
+<script src="desktop-app.js"></script>
+</body>
+</html>

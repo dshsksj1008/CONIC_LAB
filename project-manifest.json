@@ -1,0 +1,16 @@
+{
+  "name": "CONIC LAB V5",
+  "pages": [
+    "index.html",
+    "ar.html",
+    "lab.html",
+    "markers.html",
+    "qr.html",
+    "math-board.html",
+    "offline-demo.html",
+    "diagnostics.html"
+  ],
+  "model_kind": "equation-derived dynamic meshes",
+  "marker_kind": "AR.js pattern-based with .patt",
+  "verification": "static and mathematical; real smartphone camera not confirmed"
+}
