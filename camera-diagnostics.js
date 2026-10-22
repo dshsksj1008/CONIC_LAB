@@ -1,0 +1,9 @@
+(()=>{'use strict';const out=document.getElementById('camera-detail'),btn=document.getElementById('camera-test-btn'),box=document.getElementById('camera-tools');if(!out||!btn)return;
+const say=s=>out.textContent=s;
+const explain=e=>{let n=e?.name||'';return ({NotAllowedError:'권한이 거부되었어요. 주소창의 카메라 권한을 허용하고 새로고침하세요.',NotFoundError:'사용할 카메라가 없습니다. 카메라 장치 연결을 확인하세요.',NotReadableError:'다른 앱이 카메라를 사용 중이거나 장치를 열 수 없습니다.',OverconstrainedError:'요청한 카메라 설정이 지원되지 않습니다.',SecurityError:'보안 제한입니다. HTTPS로 접속하세요.',AbortError:'카메라 연결이 중단되었습니다.'})[n]||`${n||'알 수 없는 오류'}: ${e?.message||'카메라 실행 실패'}`};
+async function test(){if(!navigator.mediaDevices?.getUserMedia){say('getUserMedia를 사용할 수 없습니다. GitHub Pages의 HTTPS 주소로 직접 접속하세요.');return;}say('카메라 권한을 확인하고 있습니다…');let stream;try{stream=await navigator.mediaDevices.getUserMedia({audio:false,video:{facingMode:{ideal:'environment'}}});let track=stream.getVideoTracks()[0];say('카메라 권한 OK ('+(track?.label||'비디오')+'). 현재 화면이 검정색이면 AR 엔진이나 마커 추적을 추가 점검해야 합니다.');}catch(e){say(explain(e));}finally{stream?.getTracks().forEach(t=>t.stop());}}
+btn.onclick=test;document.getElementById('camera-hide-btn').onclick=()=>box.style.display='none';
+if(!window.isSecureContext)say('보안 컨텍스트가 아닙니다. HTTPS 주소에서 열어주세요.');else if(!navigator.mediaDevices?.getUserMedia)say('브라우저가 카메라 API를 제공하지 않습니다. iPad Safari/노트북 Chrome에서 직접 열어주세요.');else say('HTTPS 확인. 카메라 권한 테스트 버튼으로 원인을 확인하세요.');
+window.addEventListener('error',e=>{if(/aframe|AR\.js|camera|video|webcam/i.test(String(e.message||'')))say('스크립트 오류: '+e.message)});
+setTimeout(()=>{if(window.aframeLoadFailed||window.arjsLoadFailed)say('3D/AR 라이브러리를 불러오지 못했습니다. 네트워크·콘텐츠 차단·CDN 접속을 확인하세요.');},5500);
+})();
